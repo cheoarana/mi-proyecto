@@ -29,3 +29,11 @@ py manage.py runserver
 ```
 
 **NOTA:** Abrir en el navegador la siguiente ruta `http://127.0.0.1:8000/`
+
+# Configuracion aplicacion
+
+**NOTA:** Cuando queremos crear una nueva aplicacion:
+1. Crear aplicacion nueva
+```python
+py manage.py startapp nombre_app
+```
