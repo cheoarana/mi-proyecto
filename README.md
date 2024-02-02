@@ -37,3 +37,11 @@ py manage.py runserver
 ```python
 py manage.py startapp nombre_app
 ```
+
+```
+jonathan_arana
+|__fitness_app
+|____models.py
+|____urls.puy
+
+```

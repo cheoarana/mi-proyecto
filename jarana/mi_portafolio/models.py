@@ -30,4 +30,4 @@ class Profile(models.Model):
     skills = models.TextField()
 
     def __str__(self):
-        return self.first_name+" "+self.last_name
+        return self.first_name+" "+self.last_name+":"+str(self.age)
