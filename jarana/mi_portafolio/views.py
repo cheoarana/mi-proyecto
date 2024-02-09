@@ -10,11 +10,6 @@ def index(request):
     return render(request,'mi_portafolio/index.html',{})
 
 def mis_datos(request):
-    #data = {
-    #    "nombre":"Julian",
-    #    "apellido":"Arana",
-    #    "skills":["Python 3.10+","HTML5","SQL","Git","Django 5"]
-    #    }
     data = Profile.objects.get(id=3)
     return render(request,'mi_portafolio/mydata.html',{'data':data})
 
@@ -27,8 +22,13 @@ def new_profile(request):
         form = ProfileForm(request.POST)
         if form.is_valid():
             profile = form.save(commit=False)
-            profile.save()
-            return redirect('profile')
+            profiles_temp = Profile.objects.filter(first_name=profile.first_name,last_name=profile.last_name,address=profile.address)
+            print(profiles_temp)
+            if len(profiles_temp) >0:
+                return redirect('index')
+            else:
+                profile.save()
+                return redirect('profile')
     else:
         form = ProfileForm()
         return render(request,"mi_portafolio/profile-form.html",{'form':form})
