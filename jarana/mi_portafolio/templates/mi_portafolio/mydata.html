@@ -1,0 +1,16 @@
+{% extends 'mi_portafolio/base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Datos</title>
+</head>
+<body>
+    {% block content%}
+    <H1 style="font-family: fantasy;">MIS DATOS</H1>
+    <p style="font-weight: bold;">Nombre:</p><span>{{data.first_name}} {{data.last_name}}</span>
+    <h3>Conocimiento</h3>
+    <ul>
+        <li>{{data.skills}}</li>
+    </ul>
+    {% endblock%}
+</body>
